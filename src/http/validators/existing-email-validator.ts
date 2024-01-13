@@ -4,8 +4,8 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator'
-import { Db } from '../../utils/db/database'
 import { User } from '../../entities/User'
+import {Db} from "../../config/db/database";
 
 @ValidatorConstraint({ async: true })
 export class EmailExistsConstraint implements ValidatorConstraintInterface {

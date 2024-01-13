@@ -1,8 +1,8 @@
 import { Repository } from 'typeorm'
 import { User } from '../entities/User'
-import emitter from '../utils/events/global-event-emitter'
 import { RegisterRequestDto } from '../http/requests/register-request-dto'
 import { UserCreated } from '../events/user-created'
+import emitter from "../utils/boot/events/event-emitter";
 
 export class UserService {
   constructor(private readonly repository: Repository<User>) {}

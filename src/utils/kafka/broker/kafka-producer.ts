@@ -19,12 +19,4 @@ export class KafkaProducer {
       ],
     })
   }
-
-  async connect() {
-    await this.producer.connect()
-  }
-
-  async disconnect() {
-    await this.producer.disconnect()
-  }
 }

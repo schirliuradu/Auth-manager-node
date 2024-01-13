@@ -6,8 +6,8 @@ import { RegisterRequestDto } from '../requests/register-request-dto'
 import { UserService } from '../../services/user-service'
 import { User } from '../../entities/User'
 import { JwtService } from '../../services/jwt-service'
-import { Db } from '../../utils/db/database'
 import { LoginRequestDto } from '../requests/login-request-dto'
+import {Db} from "../../config/db/database";
 
 const router = express.Router()
 
