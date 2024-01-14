@@ -9,11 +9,12 @@ This is part of the Project manager node microservice cluster, responsible only 
   - [x] Jwt token generation
   - [x] User password encryption
   
-- User login
+- [x] User login
   - [x] User password validation
 
-- User data propagation to other microservices through kafka
-- Feature and unit tests 
+- [x] Events and events listeners to decouple services code from other consequent logic 
+- [x] User data propagation to other microservices through kafka
+- [x] Feature and unit tests 
 
 ## Next steps 
 
@@ -23,6 +24,7 @@ This is part of the Project manager node microservice cluster, responsible only 
 - [ ] User password change 
 - [ ] User password recovery
 - [ ] User password recovery email sending
+- [ ] User permissions management
 - [ ] Production environment setup
 - [ ] Better Docker containerization
 - [ ] Mono repository setup
