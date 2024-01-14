@@ -1,8 +1,8 @@
 import { Request } from 'express'
 import { RequestDtoInterface } from './interfaces/request-dto-interface'
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator'
-import { EmailExists } from '../validators/existing-email-validator'
 import { UserPassword } from '../validators/user-password-validator'
+import { ExistingUser } from '../validators/existing-user-validator'
 
 export type LoginRequest = Request & {
   body: {
@@ -14,7 +14,7 @@ export type LoginRequest = Request & {
 export class LoginRequestDto implements RequestDtoInterface {
   @IsNotEmpty()
   @IsEmail()
-  @EmailExists()
+  @ExistingUser()
   email: string
 
   @IsString()

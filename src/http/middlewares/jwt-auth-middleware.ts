@@ -1,7 +1,7 @@
 import { JwtService } from '../../services/jwt-service'
 import { Request, Response, NextFunction } from 'express'
 import { User } from '../../entities/User'
-import {Db} from "../../config/db/database";
+import { Db } from '../../config/db/database'
 
 export const jwtAuthMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers['authorization']

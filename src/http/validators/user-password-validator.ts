@@ -6,7 +6,7 @@ import {
 } from 'class-validator'
 import * as bcrypt from 'bcrypt'
 import { User } from '../../entities/User'
-import {Db} from "../../config/db/database";
+import { Db } from '../../config/db/database'
 
 interface ObjectArgs {
   email: string

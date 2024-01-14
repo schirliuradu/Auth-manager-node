@@ -21,4 +21,3 @@ export const validateRequest = async <T extends RequestDtoInterface>(
 
   next()
 }
-

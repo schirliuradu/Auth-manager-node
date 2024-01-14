@@ -7,7 +7,7 @@ import { UserService } from '../../services/user-service'
 import { User } from '../../entities/User'
 import { JwtService } from '../../services/jwt-service'
 import { LoginRequestDto } from '../requests/login-request-dto'
-import {Db} from "../../config/db/database";
+import { Db } from '../../config/db/database'
 
 const router = express.Router()
 

@@ -14,7 +14,7 @@ export class AuthController {
 
     const { user, token } = await this.authService.register(registerDto)
 
-    res.json(new LoggedUserResource(user, token))
+    res.status(201).json(new LoggedUserResource(user, token))
   }
 
   async login(req: Request, res: Response) {

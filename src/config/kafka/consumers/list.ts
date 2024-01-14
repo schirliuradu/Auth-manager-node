@@ -1,3 +1,3 @@
 export const consumers = [
-    // add topics with handlers here
+  // add topics with handlers here
 ]

@@ -1,6 +1,7 @@
 import { Request } from 'express'
 import { RequestDtoInterface } from './interfaces/request-dto-interface'
 import { IsEmail, IsNotEmpty, IsString, IsStrongPassword, MaxLength } from 'class-validator'
+import { UnusedEmail } from '../validators/unused-email-validator'
 
 export type RegisterRequest = Request & {
   body: {
@@ -24,6 +25,7 @@ export class RegisterRequestDto implements RequestDtoInterface {
 
   @IsNotEmpty()
   @IsEmail()
+  @UnusedEmail()
   email: string
 
   @IsNotEmpty()
