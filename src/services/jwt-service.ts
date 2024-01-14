@@ -24,7 +24,7 @@ export class JwtService {
   }
 
   async verifyToken(token: string) {
-    return jwt.verify(token, process.env.JWT_SECRET!, {}, async (err, decoded) => {
+    return jwt.verify(token, JWT_SECRET!, {}, async (err, decoded) => {
       if (err) {
         throw err
       }
@@ -38,8 +38,6 @@ export class JwtService {
           throw new JsonWebTokenError('Jwt token invalid user provided!')
         }
       }
-
-      return decoded
     })
   }
 }

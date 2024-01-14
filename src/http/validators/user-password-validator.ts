@@ -24,7 +24,7 @@ export class UserPasswordConstraint implements ValidatorConstraintInterface {
       return await bcrypt.compare(password, user.password)
     }
 
-    return true
+    return false
   }
 
   defaultMessage() {

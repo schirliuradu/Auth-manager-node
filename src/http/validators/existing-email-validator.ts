@@ -1,6 +1,5 @@
 import {
   registerDecorator,
-  ValidationArguments,
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator'
@@ -9,7 +8,7 @@ import {Db} from "../../config/db/database";
 
 @ValidatorConstraint({ async: true })
 export class EmailExistsConstraint implements ValidatorConstraintInterface {
-  async validate(email: string, _: ValidationArguments) {
+  async validate(email: string) {
     const userRepository = Db.getRepository(User)
     const user = await userRepository.findOneBy({ email })
 
