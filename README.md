@@ -26,6 +26,8 @@ This is part of the Project manager node microservice cluster, responsible only 
 - [ ] Production environment setup
 - [ ] Better Docker containerization
 - [ ] Mono repository setup
+- [ ] CI/CD pipeline setup
+- [ ] Better logging
 
 ## Check the other microservices
 
