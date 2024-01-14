@@ -27,6 +27,7 @@ This is part of the Project manager node microservice cluster, responsible only 
 - [ ] User permissions management
 - [ ] Production environment setup
 - [ ] Better Docker containerization
+- [ ] Swagger for API documentation
 - [ ] Mono repository setup
 - [ ] CI/CD pipeline setup
 - [ ] Better logging

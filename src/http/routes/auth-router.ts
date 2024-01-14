@@ -11,9 +11,7 @@ import { Db } from '../../config/db/database'
 
 const router = express.Router()
 
-const authController = new AuthController(
-  new AuthService(new UserService(Db.getRepository(User)), new JwtService(Db.getRepository(User))),
-)
+const authController = new AuthController(new AuthService(new UserService(Db.getRepository(User)), new JwtService()))
 
 router.post(
   '/register',
