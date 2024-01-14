@@ -1,7 +1,7 @@
 # Project Name
 
 This project is a nodejs with TypeScript application that uses Mysql for data storage and TypeORM for database management.
-This is part of the Project manager node microservice list, responsible for jwt auth. 
+This is part of the Project manager node microservice cluster, responsible only for jwt auth and user management. 
 
 ## Features 
 
