@@ -10,7 +10,6 @@ This is part of the Project manager node microservice list, responsible for jwt 
   - [x] User password encryption
   
 - User login
-  - [x] Jwt token validation
   - [x] User password validation
 
 - User data propagation to other microservices through kafka
