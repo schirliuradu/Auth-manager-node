@@ -26,6 +26,7 @@ This is part of the Project manager node microservice cluster, responsible only 
 - [ ] User password recovery email sending
 - [ ] User permissions management
 - [ ] Production environment setup
+- [ ] DI container (TypeDI or others)
 - [ ] Better Docker containerization
 - [ ] Swagger for API documentation
 - [ ] Mono repository setup
