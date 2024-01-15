@@ -1,8 +1,8 @@
 import { Repository } from 'typeorm'
 import { User } from '../entities/User'
-import { RegisterRequestDto } from '../http/requests/register-request-dto'
 import { UserCreated } from '../events/user-created'
 import emitter from '../utils/boot/events/event-emitter'
+import { RegisterDto } from '../http/requests/dto/register-dto'
 
 export class UserService {
   constructor(private readonly repository: Repository<User>) {}
@@ -11,7 +11,7 @@ export class UserService {
     return this.repository.findOneBy({ email })
   }
 
-  async createUser(dto: RegisterRequestDto) {
+  async createUser(dto: RegisterDto) {
     const user = new User()
 
     Object.assign(user, dto)

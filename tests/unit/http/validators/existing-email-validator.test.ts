@@ -1,4 +1,4 @@
-import { EmailExistsConstraint } from '../../../../src/http/validators/unused-email-validator'
+import { UnusedEmailConstraint } from '../../../../src/http/validators/unused-email-validator'
 import { Db } from '../../../../src/config/db/database'
 import { User } from '../../../../src/entities/User'
 
@@ -9,7 +9,7 @@ jest.mock('../../../../src/config/db/database', () => ({
 }))
 
 describe('EmailExistsConstraint', () => {
-  let emailExistsConstraint: EmailExistsConstraint
+  let emailExistsConstraint: UnusedEmailConstraint
   let userRepositoryMock: { findOneBy: jest.Mock }
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('EmailExistsConstraint', () => {
     }
     ;(Db.getRepository as jest.MockedFunction<typeof Db.getRepository>).mockReturnValue(userRepositoryMock as any)
 
-    emailExistsConstraint = new EmailExistsConstraint()
+    emailExistsConstraint = new UnusedEmailConstraint()
   })
 
   afterEach(() => jest.clearAllMocks())

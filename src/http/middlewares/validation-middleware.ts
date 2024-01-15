@@ -1,6 +1,6 @@
 import { validate } from 'class-validator'
 import { Request, Response, NextFunction } from 'express'
-import { RequestDtoInterface } from '../requests/interfaces/request-dto-interface'
+import { RequestDtoInterface } from '../requests/dto/interfaces/request-dto-interface'
 
 export const validateRequest = async <T extends RequestDtoInterface>(
   dtoType: { new (...args: any[]): T },

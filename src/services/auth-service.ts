@@ -1,7 +1,7 @@
 import { JwtService } from './jwt-service'
 import { UserService } from './user-service'
-import { RegisterRequestDto } from '../http/requests/register-request-dto'
-import { LoginRequestDto } from '../http/requests/login-request-dto'
+import { RegisterDto } from '../http/requests/dto/register-dto'
+import { LoginDto } from '../http/requests/dto/login-dto'
 
 export class AuthService {
   constructor(
@@ -9,13 +9,13 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register(dto: RegisterRequestDto) {
+  async register(dto: RegisterDto) {
     const user = await this.userService.createUser(dto)
 
     return { user, token: await this.jwtService.generateToken(user) }
   }
 
-  async login(dto: LoginRequestDto) {
+  async login(dto: LoginDto) {
     const user = await this.userService.findByEmail(dto.email)
 
     if (!user) {

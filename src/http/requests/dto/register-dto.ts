@@ -1,18 +1,9 @@
-import { Request } from 'express'
 import { RequestDtoInterface } from './interfaces/request-dto-interface'
 import { IsEmail, IsNotEmpty, IsString, IsStrongPassword, MaxLength } from 'class-validator'
-import { UnusedEmail } from '../validators/unused-email-validator'
+import { UnusedEmail } from '../../validators/unused-email-validator'
+import { RegisterRequest } from '../register-request'
 
-export type RegisterRequest = Request & {
-  body: {
-    firstName: string
-    lastName: string
-    email: string
-    password: string
-  }
-}
-
-export class RegisterRequestDto implements RequestDtoInterface {
+export class RegisterDto implements RequestDtoInterface {
   @IsNotEmpty()
   @IsString()
   @MaxLength(25)
@@ -39,7 +30,7 @@ export class RegisterRequestDto implements RequestDtoInterface {
     this.password = request.body.password
   }
 
-  public static fromRequest(req: RegisterRequest): RegisterRequestDto {
-    return new RegisterRequestDto(req)
+  public static fromRequest(req: RegisterRequest): RegisterDto {
+    return new RegisterDto(req)
   }
 }

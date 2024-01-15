@@ -3,7 +3,7 @@ import { User } from '../../entities/User'
 import { Db } from '../../config/db/database'
 
 @ValidatorConstraint({ async: true })
-export class EmailExistsConstraint implements ValidatorConstraintInterface {
+export class UnusedEmailConstraint implements ValidatorConstraintInterface {
   async validate(email: string) {
     const userRepository = Db.getRepository(User)
 
@@ -24,7 +24,7 @@ export function UnusedEmail(validationOptions?: { message?: string }) {
       propertyName: propertyName,
       options: validationOptions,
       constraints: [],
-      validator: EmailExistsConstraint,
+      validator: UnusedEmailConstraint,
     })
   }
 }
