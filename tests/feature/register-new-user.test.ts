@@ -4,7 +4,7 @@ const request = require('supertest')
 import { User } from '../../src/entities/User'
 import { Db } from '../../src/config/db/database'
 import { UserService } from '../../src/services/user-service'
-import { RegisterRequestDto } from '../../src/http/requests/register-request-dto'
+import { RegisterDto } from '../../src/http/requests/dto/register-dto'
 
 describe('Register new user', () => {
   beforeAll(async () => {
@@ -37,7 +37,7 @@ describe('Register new user', () => {
 
     const userRepository = Db.getRepository(User)
     const userService = new UserService(userRepository)
-    await userService.createUser(req as RegisterRequestDto)
+    await userService.createUser(req as RegisterDto)
 
     const response = await request(app).post('/api/register').send(req).set('Content-type', 'application/json')
 

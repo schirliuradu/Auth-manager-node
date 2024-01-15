@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
-import { RequestDtoInterface } from '../../../../src/http/requests/interfaces/request-dto-interface'
-import { validateRequest } from '../../../../src/http/middlewares/validation-middleware'
 import { validate, ValidationError } from 'class-validator'
+import { validateRequest } from '../../../../src/http/middlewares/validation-middleware'
+import { RequestDtoInterface } from '../../../../src/http/requests/dto/interfaces/request-dto-interface'
 
 jest.mock('class-validator', () => ({
   validate: jest.fn(),

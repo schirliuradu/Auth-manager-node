@@ -1,6 +1,6 @@
-import { UnusedEmailConstraint } from '../../../../src/http/validators/unused-email-validator'
-import { Db } from '../../../../src/config/db/database'
 import { User } from '../../../../src/entities/User'
+import { Db } from '../../../../src/config/db/database'
+import { UnusedEmailConstraint } from '../../../../src/http/validators/unused-email-validator'
 
 jest.mock('../../../../src/config/db/database', () => ({
   Db: {

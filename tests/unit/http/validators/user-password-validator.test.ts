@@ -1,8 +1,8 @@
-import { UserPasswordConstraint } from '../../../../src/http/validators/user-password-validator'
-import { User } from '../../../../src/entities/User'
 import * as bcrypt from 'bcrypt'
-import { Db } from '../../../../src/config/db/database'
+import { User } from '../../../../src/entities/User'
 import { ValidationArguments } from 'class-validator'
+import { Db } from '../../../../src/config/db/database'
+import { UserPasswordConstraint } from '../../../../src/http/validators/user-password-validator'
 
 jest.mock('../../../../src/config/db/database', () => ({
   Db: {

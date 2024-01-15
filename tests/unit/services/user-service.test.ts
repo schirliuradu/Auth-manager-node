@@ -1,9 +1,9 @@
 import { Repository } from 'typeorm'
 import { User } from '../../../src/entities/User'
-import { UserService } from '../../../src/services/user-service'
-import { RegisterRequestDto } from '../../../src/http/requests/register-request-dto'
-import emitter from '../../../src/utils/boot/events/event-emitter'
 import { UserCreated } from '../../../src/events/user-created'
+import { UserService } from '../../../src/services/user-service'
+import emitter from '../../../src/utils/boot/events/event-emitter'
+import { RegisterDto } from '../../../src/http/requests/dto/register-dto'
 
 jest.mock('../../../src/utils/boot/events/event-emitter', () => ({
   emit: jest.fn(),
@@ -49,7 +49,7 @@ describe('UserService', () => {
 
   describe('createUser', () => {
     it('should create a user and emit UserCreated event', async () => {
-      const registerDto: RegisterRequestDto = {
+      const registerDto: RegisterDto = {
         firstName: 'John',
         lastName: 'Doe',
         email: 'john.doe@example.com',

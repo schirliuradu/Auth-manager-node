@@ -1,8 +1,8 @@
-import { UserService } from '../../../src/services/user-service'
-import { RegisterRequestDto } from '../../../src/http/requests/register-request-dto'
 import { JwtService } from '../../../src/services/jwt-service'
 import { AuthService } from '../../../src/services/auth-service'
-import { LoginRequestDto } from '../../../src/http/requests/login-request-dto'
+import { UserService } from '../../../src/services/user-service'
+import { LoginDto } from '../../../src/http/requests/dto/login-dto'
+import { RegisterDto } from '../../../src/http/requests/dto/register-dto'
 
 describe('AuthService', () => {
   afterEach(() => {
@@ -11,8 +11,7 @@ describe('AuthService', () => {
 
   describe('register', () => {
     it('should register a user and return user and token', async () => {
-      // Arrange
-      const registerDto: RegisterRequestDto = {
+      const registerDto: RegisterDto = {
         firstName: 'John',
         lastName: 'Doe',
         email: 'john.doe@example.com',
@@ -42,8 +41,7 @@ describe('AuthService', () => {
 
   describe('login', () => {
     it('should login a user and return user and token', async () => {
-      // Arrange
-      const loginDto: LoginRequestDto = {
+      const loginDto: LoginDto = {
         email: 'john.doe@example.com',
         password: 'password',
       }
@@ -61,7 +59,7 @@ describe('AuthService', () => {
 
       const authService = new AuthService(mockUserService, mockJwtService)
 
-      const result = await authService.login(loginDto)
+      const result = await authService.login(loginDto as LoginDto)
 
       expect(result).toEqual({ user: expectedUser, token: expectedToken })
       expect(mockUserService.findByEmail).toHaveBeenCalledWith(loginDto.email)
@@ -70,7 +68,7 @@ describe('AuthService', () => {
 
     it('should throw an error for invalid credentials', async () => {
       // Arrange
-      const loginDto: LoginRequestDto = {
+      const loginDto: LoginDto = {
         email: 'nonexistent@example.com',
         password: 'password',
       }

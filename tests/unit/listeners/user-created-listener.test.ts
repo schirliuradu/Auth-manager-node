@@ -1,6 +1,6 @@
+import { UserCreated } from '../../../src/events/user-created'
 import { KafkaProducer } from '../../../src/utils/kafka/broker/kafka-producer'
 import { UserCreatedListener } from '../../../src/listeners/user-created-listener'
-import { UserCreated } from '../../../src/events/user-created'
 
 describe('UserCreatedListener', () => {
   afterEach(() => {
