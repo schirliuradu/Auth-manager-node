@@ -18,6 +18,8 @@ export class UserService {
 
     await this.repository.save(user)
 
+    // if other operations with users will be added (permissions or other) add db transaction
+
     emitter.emit(UserCreated.event, new UserCreated(user))
 
     return user
