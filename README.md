@@ -1,7 +1,14 @@
 # Auth manager 
 
-This project is a nodejs with TypeScript application that uses Mysql for data storage and TypeORM for database management.
-This is part of the Project manager node microservice cluster, responsible only for jwt auth and user management. 
+This is the first microservice of the `Project manager` cluster.
+
+### About _Project manager_
+
+_**Project manager**_ is a management tool that allows company users to create projects and tasks, assign tasks to projects and users, and track the progress of the tasks.
+
+### Tech specs 
+
+The auth manager microservice is a _nodejs_ with _TypeScript_ application that uses _Mysql_ for data storage and _TypeORM_ for database management and _Apache Kafka_ as message broker.
 
 ## Features 
 
@@ -35,4 +42,4 @@ This is part of the Project manager node microservice cluster, responsible only 
 
 ## Check the other microservices
 
-- [ ] [Project manager] (https://github.com/schirliuradu/Project-manager-node)
+- Project manager (https://github.com/schirliuradu/Project-manager-node)
